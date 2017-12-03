@@ -34,3 +34,4 @@ on Android Studio, the dependecies are declared in app/build.gradle
 2. on Bluemix/NodeRED/cloud-no-cred.txt you should use your AppSecret and AppGuid from your Bluemix Push Notifications instance.
 3. on Android App/app/src/main/java/com/example/hezib/catalarm/NotificationsClient.java you should use your AppGuid and ClientSecret from your Bluemix Push Notifications instance.
 4. on Android App/app/src/main/java/com/example/hezib/catalarm/utils/CloudantQueries.java you should use your cloudant credentials, base 64 encoded.
+5. on Android App/app/google-services.json replace the file with yours (see https://console.bluemix.net/docs/services/mobilepush/push_step_1.html#push_step_1)
