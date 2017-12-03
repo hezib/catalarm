@@ -23,7 +23,7 @@ on the raspberry pi:
 - python 2 with: setproctitle, psutil, playsound
 
 on Bluemix - an account with the following services:
-- Internet of Things Platform Starter boilerplate
+- Internet of Things Platform Starter boilerplate (IoT Platform + Node.js sdk + Cloudant NoSQL)
 - Push notifications
 - Watson Visual Recognition
 
