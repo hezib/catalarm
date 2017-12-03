@@ -1,0 +1,391 @@
+[
+    {
+        "id": "78ecd06a.b971c",
+        "type": "tab",
+        "label": "Flow 7"
+    },
+    {
+        "id": "f8a6e9.1d2ed918",
+        "type": "ibmiot in",
+        "z": "78ecd06a.b971c",
+        "authentication": "boundService",
+        "apiKey": "",
+        "inputType": "evt",
+        "deviceId": "",
+        "applicationId": "",
+        "deviceType": "+",
+        "eventType": "motion",
+        "commandType": "",
+        "format": "json",
+        "name": "IBM IoT",
+        "service": "registered",
+        "allDevices": "",
+        "allApplications": "",
+        "allDeviceTypes": true,
+        "allEvents": false,
+        "allCommands": "",
+        "allFormats": "",
+        "qos": 0,
+        "x": 95,
+        "y": 173,
+        "wires": [
+            [
+                "f60d714e.a31b3",
+                "7290aff2.0be3d"
+            ]
+        ]
+    },
+    {
+        "id": "f60d714e.a31b3",
+        "type": "debug",
+        "z": "78ecd06a.b971c",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "true",
+        "x": 225,
+        "y": 142,
+        "wires": []
+    },
+    {
+        "id": "cf8d56ae.c92b78",
+        "type": "function",
+        "z": "78ecd06a.b971c",
+        "name": "get result",
+        "func": "var labels = msg.result.images[0].classifiers[0].classes;\nmsg.result = 0;\nfor (var i = 0; i < labels.length; i++) {\n    for (var prop in labels[i]) {\n        if (labels[i].hasOwnProperty(prop)) { \n            if(prop == \"class\" && labels[i][prop] == \"cat\") {\n                msg.result = labels[i][\"score\"];\n                break;\n            }\n        }\n    }\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 551,
+        "y": 430,
+        "wires": [
+            [
+                "9a4c05e9.353f08",
+                "34d0d906.c25696"
+            ]
+        ]
+    },
+    {
+        "id": "9a4c05e9.353f08",
+        "type": "debug",
+        "z": "78ecd06a.b971c",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "result",
+        "x": 709,
+        "y": 398,
+        "wires": []
+    },
+    {
+        "id": "5013bc85.b45a64",
+        "type": "debug",
+        "z": "78ecd06a.b971c",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "true",
+        "x": 427,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "af0c21ad.2486f",
+        "type": "debug",
+        "z": "78ecd06a.b971c",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "true",
+        "x": 325,
+        "y": 218,
+        "wires": []
+    },
+    {
+        "id": "1839e42d.0c252c",
+        "type": "base64",
+        "z": "78ecd06a.b971c",
+        "name": "",
+        "x": 285.5,
+        "y": 309,
+        "wires": [
+            [
+                "5013bc85.b45a64",
+                "5df69b89.c6d784"
+            ]
+        ]
+    },
+    {
+        "id": "a1534790.30b2a8",
+        "type": "debug",
+        "z": "78ecd06a.b971c",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "true",
+        "x": 584,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "7290aff2.0be3d",
+        "type": "change",
+        "z": "78ecd06a.b971c",
+        "name": "set fields",
+        "rules": [
+            {
+                "t": "set",
+                "p": "_id",
+                "pt": "msg",
+                "to": "payload.d.timestamp",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "alarm",
+                "pt": "msg",
+                "to": "payload.d.alarm",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.d.pic",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "deviceId",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "deviceType",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "eventType",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "format",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 186,
+        "y": 249,
+        "wires": [
+            [
+                "af0c21ad.2486f",
+                "1839e42d.0c252c"
+            ]
+        ]
+    },
+    {
+        "id": "34d0d906.c25696",
+        "type": "switch",
+        "z": "78ecd06a.b971c",
+        "name": "If cat found",
+        "property": "result",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "0.8",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 1,
+        "x": 670,
+        "y": 485,
+        "wires": [
+            [
+                "db6e1de9.3d101",
+                "df14fe25.70a57",
+                "7ac4f93a.466128",
+                "d56190b9.eb137"
+            ]
+        ]
+    },
+    {
+        "id": "22da2850.709228",
+        "type": "ibmiot out",
+        "z": "78ecd06a.b971c",
+        "authentication": "boundService",
+        "apiKey": "",
+        "outputType": "cmd",
+        "deviceId": "b827eb2268c4",
+        "deviceType": "rpi-type",
+        "eventCommandType": "catfound",
+        "format": "json",
+        "data": "{}",
+        "qos": 0,
+        "name": "IBM IoT",
+        "service": "registered",
+        "x": 1036,
+        "y": 616,
+        "wires": []
+    },
+    {
+        "id": "db6e1de9.3d101",
+        "type": "debug",
+        "z": "78ecd06a.b971c",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "true",
+        "x": 817,
+        "y": 450,
+        "wires": []
+    },
+    {
+        "id": "df14fe25.70a57",
+        "type": "base64",
+        "z": "78ecd06a.b971c",
+        "name": "",
+        "x": 875.5,
+        "y": 523,
+        "wires": [
+            [
+                "308e44d8.217d0c",
+                "834e19b1.a9f048"
+            ]
+        ]
+    },
+    {
+        "id": "308e44d8.217d0c",
+        "type": "debug",
+        "z": "78ecd06a.b971c",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "true",
+        "x": 1022,
+        "y": 488,
+        "wires": []
+    },
+    {
+        "id": "834e19b1.a9f048",
+        "type": "cloudant out",
+        "z": "78ecd06a.b971c",
+        "name": "Save to Database",
+        "cloudant": "",
+        "database": "catalarm",
+        "service": "iot-rpi-starter-cloudantNoSQLDB",
+        "payonly": false,
+        "operation": "insert",
+        "x": 1061.5,
+        "y": 563,
+        "wires": []
+    },
+    {
+        "id": "5df69b89.c6d784",
+        "type": "visual-recognition-v3",
+        "z": "78ecd06a.b971c",
+        "name": "",
+        "apikey": "",
+        "image-feature": "classifyImage",
+        "lang": "en",
+        "x": 415.5,
+        "y": 369,
+        "wires": [
+            [
+                "cf8d56ae.c92b78",
+                "a1534790.30b2a8"
+            ]
+        ]
+    },
+    {
+        "id": "1ae40264.c6e42e",
+        "type": "http request",
+        "z": "78ecd06a.b971c",
+        "name": "IBM Push",
+        "method": "POST",
+        "ret": "obj",
+        "url": "https://mobile.eu-gb.bluemix.net/imfpush/v1/apps/<Your-App-Guid>/messages",
+        "tls": "",
+        "x": 1031,
+        "y": 676,
+        "wires": [
+            [
+                "ad9be6c4.a32558"
+            ]
+        ]
+    },
+    {
+        "id": "7ac4f93a.466128",
+        "type": "function",
+        "z": "78ecd06a.b971c",
+        "name": "set fields",
+        "func": "msg.payload = {\n\t\"message\": {\n\t\t\"alert\": \"Your cat is on the counter !\"\n\t},\n\t\"settings\":{\n\t\t\"gcm\":{\n\t\t    \"collapseKey\":\"catfound\",\n\t\t\t\"interactiveCategory\":\"stream\",\n\t\t\t\"icon\":\"cat_icon\",\n\t\t\t\"visibility\":\"public\",\n\t\t\t\"priority\":\"max\",\n\t\t\t\"sound\":\"meow2\"\n\t\t}\n\t}\n};\nmsg.headers = {};\nmsg.headers['Content-Type'] = 'application/json';\nmsg.headers['appSecret'] = 'Your-App-Secret';\nmsg.headers['Accept-Language'] = 'en-US';\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 878.5,
+        "y": 637,
+        "wires": [
+            [
+                "1ae40264.c6e42e"
+            ]
+        ]
+    },
+    {
+        "id": "ad9be6c4.a32558",
+        "type": "debug",
+        "z": "78ecd06a.b971c",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "true",
+        "x": 1172,
+        "y": 638,
+        "wires": []
+    },
+    {
+        "id": "28aea7be.cb4578",
+        "type": "inject",
+        "z": "78ecd06a.b971c",
+        "name": "",
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 678,
+        "y": 665,
+        "wires": [
+            [
+                "7ac4f93a.466128"
+            ]
+        ]
+    },
+    {
+        "id": "d56190b9.eb137",
+        "type": "function",
+        "z": "78ecd06a.b971c",
+        "name": "set alarm",
+        "func": "msg.payload = {};\nmsg.payload = { 'alarm':msg.alarm };\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 876,
+        "y": 582,
+        "wires": [
+            [
+                "22da2850.709228"
+            ]
+        ]
+    }
+]

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="alarms">
+        <item>Air Horn</item>
+        <item>Fog Horn</item>
+        <item>Woop Woop</item>
+        <item>Rooster</item>
+        <item>Dog Bark</item>
+    </string-array>
+
+    <string-array name="alarmsValues">
+        <item>airhorn</item>
+        <item>foghorn</item>
+        <item>woop</item>
+        <item>rooster</item>
+        <item>dogbark</item>
+    </string-array>
+
+    <string-array name="stats">
+        <item>Total events</item>
+        <item>Average events per day</item>
+        <item>Average event duration</item>
+        <item>Most active day</item>
+        <item>Most active hours</item>
+    </string-array>
+
+    <string-array name="statsValues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+</resources>

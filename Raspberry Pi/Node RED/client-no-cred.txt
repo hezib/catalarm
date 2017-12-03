@@ -1,0 +1,443 @@
+[
+    {
+        "id": "4d281ae9.91a4e4",
+        "type": "tab",
+        "label": "Flow 1"
+    },
+    {
+        "id": "4d94eae1.9893f4",
+        "type": "http in",
+        "z": "4d281ae9.91a4e4",
+        "name": "",
+        "url": "/motion",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 159,
+        "y": 169,
+        "wires": [
+            [
+                "472587a5.393978",
+                "f70a901c.3bf41",
+                "5fc99344.b86f7c"
+            ]
+        ]
+    },
+    {
+        "id": "5fc99344.b86f7c",
+        "type": "wiotp out",
+        "z": "4d281ae9.91a4e4",
+        "authType": "d",
+        "qs": "false",
+        "qsDeviceId": "",
+        "deviceKey": "",
+        "deviceType": "",
+        "deviceId": "",
+        "event": "motion",
+        "format": "json",
+        "qos": "",
+        "name": "",
+        "x": 455,
+        "y": 241,
+        "wires": []
+    },
+    {
+        "id": "472587a5.393978",
+        "type": "debug",
+        "z": "4d281ae9.91a4e4",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "true",
+        "x": 451,
+        "y": 104,
+        "wires": []
+    },
+    {
+        "id": "f70a901c.3bf41",
+        "type": "http response",
+        "z": "4d281ae9.91a4e4",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 456,
+        "y": 177,
+        "wires": []
+    },
+    {
+        "id": "6a193479.48c33c",
+        "type": "wiotp in",
+        "z": "4d281ae9.91a4e4",
+        "authType": "d",
+        "deviceKey": "",
+        "deviceType": "",
+        "deviceId": "",
+        "command": "catfound",
+        "commandType": "g",
+        "qos": 0,
+        "name": "",
+        "x": 729,
+        "y": 132,
+        "wires": [
+            [
+                "d16314c4.71bc18",
+                "1c48846b.afe83c"
+            ]
+        ]
+    },
+    {
+        "id": "d16314c4.71bc18",
+        "type": "debug",
+        "z": "4d281ae9.91a4e4",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "true",
+        "x": 920,
+        "y": 91,
+        "wires": []
+    },
+    {
+        "id": "6c9a042a.f3bd1c",
+        "type": "exec",
+        "z": "4d281ae9.91a4e4",
+        "command": "python",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "Alarm",
+        "x": 1091.5,
+        "y": 202.5,
+        "wires": [
+            [],
+            [],
+            [
+                "9386f6f2.177928"
+            ]
+        ]
+    },
+    {
+        "id": "9386f6f2.177928",
+        "type": "debug",
+        "z": "4d281ae9.91a4e4",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "true",
+        "x": 1239,
+        "y": 177,
+        "wires": []
+    },
+    {
+        "id": "6ce47d7e.92d934",
+        "type": "http in",
+        "z": "4d281ae9.91a4e4",
+        "name": "",
+        "url": "/startmotion",
+        "method": "put",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 195,
+        "y": 373,
+        "wires": [
+            [
+                "319d390e.01cd16",
+                "5a45d341.aa3acc"
+            ]
+        ]
+    },
+    {
+        "id": "9323cf73.a7e76",
+        "type": "exec",
+        "z": "4d281ae9.91a4e4",
+        "command": "python",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "true",
+        "timer": "",
+        "oldrc": false,
+        "name": "Start motion",
+        "x": 747,
+        "y": 660.5,
+        "wires": [
+            [],
+            [
+                "d4026934.71a888"
+            ],
+            [
+                "e36b275a.5333f8"
+            ]
+        ]
+    },
+    {
+        "id": "e36b275a.5333f8",
+        "type": "debug",
+        "z": "4d281ae9.91a4e4",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "true",
+        "x": 919,
+        "y": 701,
+        "wires": []
+    },
+    {
+        "id": "31195fc8.432f2",
+        "type": "inject",
+        "z": "4d281ae9.91a4e4",
+        "name": "",
+        "topic": "",
+        "payload": "{\"alarm\":\"foghorn\"}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 370,
+        "y": 725,
+        "wires": [
+            [
+                "aed10efe.922cb"
+            ]
+        ]
+    },
+    {
+        "id": "d4026934.71a888",
+        "type": "debug",
+        "z": "4d281ae9.91a4e4",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "true",
+        "x": 919,
+        "y": 628,
+        "wires": []
+    },
+    {
+        "id": "4d9d0d58.29e3a4",
+        "type": "http in",
+        "z": "4d281ae9.91a4e4",
+        "name": "",
+        "url": "/killmotion",
+        "method": "put",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 195,
+        "y": 418,
+        "wires": [
+            [
+                "5a45d341.aa3acc",
+                "319d390e.01cd16"
+            ]
+        ]
+    },
+    {
+        "id": "ebe54ae1.63c028",
+        "type": "exec",
+        "z": "4d281ae9.91a4e4",
+        "command": "python",
+        "addpay": false,
+        "append": " /home/pi/CatAlarm/killmotion.py",
+        "useSpawn": "true",
+        "timer": "",
+        "oldrc": false,
+        "name": "Kill motion",
+        "x": 746,
+        "y": 535.5,
+        "wires": [
+            [],
+            [],
+            [
+                "e5896ccb.c6a95"
+            ]
+        ]
+    },
+    {
+        "id": "e5896ccb.c6a95",
+        "type": "debug",
+        "z": "4d281ae9.91a4e4",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "true",
+        "x": 923,
+        "y": 504,
+        "wires": []
+    },
+    {
+        "id": "9ee4673a.444468",
+        "type": "inject",
+        "z": "4d281ae9.91a4e4",
+        "name": "",
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 598,
+        "y": 495,
+        "wires": [
+            [
+                "ebe54ae1.63c028"
+            ]
+        ]
+    },
+    {
+        "id": "5a45d341.aa3acc",
+        "type": "http response",
+        "z": "4d281ae9.91a4e4",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 435,
+        "y": 393,
+        "wires": []
+    },
+    {
+        "id": "319d390e.01cd16",
+        "type": "switch",
+        "z": "4d281ae9.91a4e4",
+        "name": "check key",
+        "property": "payload.app",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "catalarm",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 1,
+        "x": 427,
+        "y": 497,
+        "wires": [
+            [
+                "ab555574.7e49e8"
+            ]
+        ]
+    },
+    {
+        "id": "ab555574.7e49e8",
+        "type": "switch",
+        "z": "4d281ae9.91a4e4",
+        "name": "",
+        "property": "payload.command",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "killmotion",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "startmotion",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 2,
+        "x": 480,
+        "y": 562,
+        "wires": [
+            [
+                "ebe54ae1.63c028"
+            ],
+            [
+                "dc179ef0.ca7a8"
+            ]
+        ]
+    },
+    {
+        "id": "dc179ef0.ca7a8",
+        "type": "template",
+        "z": "4d281ae9.91a4e4",
+        "name": "set parameters",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "/home/pi/CatAlarm/motion_opencv.py --idle-sleep {{payload.idle_sleep}} --active-sleep {{payload.active_sleep}} --alarm {{payload.alarm}}",
+        "output": "str",
+        "x": 569,
+        "y": 639,
+        "wires": [
+            [
+                "9323cf73.a7e76"
+            ]
+        ]
+    },
+    {
+        "id": "aed10efe.922cb",
+        "type": "template",
+        "z": "4d281ae9.91a4e4",
+        "name": "dry run",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "/home/pi/CatAlarm/motion_opencv.py --alarm {{payload.alarm}}",
+        "output": "str",
+        "x": 579,
+        "y": 695,
+        "wires": [
+            [
+                "9323cf73.a7e76"
+            ]
+        ]
+    },
+    {
+        "id": "1c48846b.afe83c",
+        "type": "template",
+        "z": "4d281ae9.91a4e4",
+        "name": "set alarm",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "/home/pi/CatAlarm/playalarm.py --alarm {{payload.alarm}}",
+        "output": "str",
+        "x": 936,
+        "y": 170,
+        "wires": [
+            [
+                "6c9a042a.f3bd1c",
+                "fece4908.a22b98"
+            ]
+        ]
+    },
+    {
+        "id": "80dfe7fa.9f6488",
+        "type": "inject",
+        "z": "4d281ae9.91a4e4",
+        "name": "",
+        "topic": "",
+        "payload": "{\"alarm\":\"foghorn\"}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 727,
+        "y": 203,
+        "wires": [
+            [
+                "1c48846b.afe83c"
+            ]
+        ]
+    },
+    {
+        "id": "fece4908.a22b98",
+        "type": "debug",
+        "z": "4d281ae9.91a4e4",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "true",
+        "x": 1101,
+        "y": 125,
+        "wires": []
+    }
+]

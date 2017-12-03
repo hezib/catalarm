@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="@string/pref_rpi_settings_key"
+        android:title="@string/pref_rpi_settings_title">
+
+        <EditTextPreference
+            android:key="@string/pref_rpi_ip_key"
+            android:title="@string/pref_rpi_ip_title"
+            android:inputType="text"
+            android:dialogTitle="@string/pref_rpi_ip_dlg"
+            android:defaultValue="@string/pref_rpi_ip_default" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="@string/pref_uv4l_settings_key"
+        android:title="@string/pref_uv4l_settings_title">
+
+        <EditTextPreference
+            android:key="@string/pref_uv4l_port_key"
+            android:title="@string/pref_uv4l_port_title"
+            android:inputType="number"
+            android:dialogTitle="@string/pref_uv4l_port_dlg"
+            android:defaultValue="@string/pref_uv4l_port_default" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="@string/pref_motion_settings_key"
+        android:title="@string/pref_motion_settings_title">
+
+        <EditTextPreference
+            android:key="@string/pref_motion_port_key"
+            android:title="@string/pref_motion_port_title"
+            android:inputType="number"
+            android:dialogTitle="@string/pref_motion_port_dlg"
+            android:defaultValue="@string/pref_motion_port_default" />
+
+        <EditTextPreference
+            android:key="@string/pref_idle_sleep_key"
+            android:title="@string/pref_idle_sleep_title"
+            android:inputType="numberDecimal"
+            android:defaultValue="@string/pref_idle_sleep_default"
+            android:dialogTitle="@string/pref_idle_sleep_dlg" />
+
+        <EditTextPreference
+            android:key="@string/pref_active_sleep_key"
+            android:title="@string/pref_active_sleep_title"
+            android:inputType="numberDecimal"
+            android:defaultValue="@string/pref_active_sleep_default"
+            android:dialogTitle="@string/pref_active_sleep_dlg" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="@string/pref_catalarm_settings_key"
+        android:title="@string/pref_catalarm_settings_title">
+
+        <com.example.hezib.catalarm.ListPreferenceWithSound
+            android:key="@string/pref_alarm_key"
+            android:title="@string/pref_alarm_title"
+            android:defaultValue="@string/pref_alarm_default"
+            android:dialogTitle="@string/pref_alarm_title"
+            android:entries="@array/alarms"
+            android:entryValues="@array/alarmsValues" />
+
+        <EditTextPreference
+            android:key="@string/pref_different_events_key"
+            android:title="@string/pref_different_events_title"
+            android:inputType="number"
+            android:dialogTitle="@string/pref_different_events_dlg"
+            android:defaultValue="@string/pref_different_events_default" />
+
+        <MultiSelectListPreference
+            android:key="@string/pref_stats_key"
+            android:title="@string/pref_stats_title"
+            android:defaultValue="@array/statsValues"
+            android:dialogTitle="@string/pref_stats_dlg"
+            android:entries="@array/stats"
+            android:entryValues="@array/statsValues"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

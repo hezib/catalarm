@@ -1,0 +1,172 @@
+<resources>
+    <string name="app_name">Cat Alarm</string>
+
+    <string name="disconnect_call">Disconnect Call</string>
+    <string name="connecting_to">Connecting to: %1$s</string>
+    <string name="missing_url">FATAL ERROR: Missing URL to connect to</string>
+    <string name="missing_port">FATAL ERROR: Missing port to connect to</string>
+    <string name="missing_sleep">FATAL ERROR: Missing sleep time for motion</string>
+    <string name="channel_error_title">Connection error</string>
+    <string name="ok">OK</string>
+    <string name="invalid_url_title">Invalid URL</string>
+    <string name="invalid_url_text">
+        The URL or room name you entered resulted in an invalid URL: %1$s
+    </string>
+    <string name="queries_activity_description">
+        Previous times Cat Alarm caught your cat, tap to remember&#8230;
+    </string>
+    <string name="date_view_label">Date</string>
+    <string name="time_view_label">Time</string>
+
+    <!-- Menu strings -->
+    <string name="action_stream">Stream</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_queries">Query</string>
+    <string name="action_share">Share</string>
+    <string name="action_store">Save</string>
+
+    <!-- Info strings -->
+    <string name="main_info_title">Info</string>
+    <string name="main_info_text">
+        Cat Alarm helps you keep your cat on ground level.
+        See live streaming from your Raspberry Pi camera,
+        use push-to-talk, choose an alarm, record, watch, share and much more!
+    </string>
+
+    <!-- Statistics strings -->
+    <string name="main_statistics">Statistics</string>
+    <string name="events_total">Total events Cat Alarm recorded: %1$s</string>
+    <string name="events_per_day">Average events per day: %1$s</string>
+    <string name="time_per_event">Each event lasted %1$s seconds on average</string>
+    <string name="most_active_day">The most active day was %1$s events</string>
+    <string name="most_active_hour">The most active hours are between %1$s</string>
+    <string name="events_explained">* An event is when your cat is spotted for under %1$s seconds</string>
+
+    <!-- Raspberry Pi strings -->
+    <string name="pref_rpi_settings_key">rpi_settings_key</string>
+    <string name="pref_rpi_settings_title">Raspberry Pi Settings</string>
+
+    <string name="pref_rpi_ip_key">rpi_ip_key</string>
+    <string name="pref_rpi_ip_title">Raspberry Pi Address</string>
+    <string name="pref_rpi_ip_dlg">Enter Raspberry Pi address</string>
+    <string name="pref_rpi_ip_default" translatable="false">http://192.168.2.27</string>
+
+    <!-- Uv4l strings -->
+    <string name="pref_uv4l_settings_key">uv4l_settings_key</string>
+    <string name="pref_uv4l_settings_title">UV4L Settings</string>
+
+    <string name="pref_uv4l_port_key">uv4l_port_key</string>
+    <string name="pref_uv4l_port_title">UV4L port</string>
+    <string name="pref_uv4l_port_dlg">Enter UV4L port</string>
+    <string name="pref_uv4l_port_default" translatable="false">8080</string>
+
+    <!-- Motion strings -->
+    <string name="pref_motion_settings_key">motion_settings_key</string>
+    <string name="pref_motion_settings_title">Motion Settings</string>
+
+    <string name="pref_motion_port_key">motion_port_key</string>
+    <string name="pref_motion_port_title">Motion port</string>
+    <string name="pref_motion_port_dlg">Enter Motion port</string>
+    <string name="pref_motion_port_default" translatable="false">1880</string>
+
+    <string name="pref_idle_sleep_key">idle_sleep_time_key</string>
+    <string name="pref_idle_sleep_title">Motion idle sleep time</string>
+    <string name="pref_idle_sleep_dlg">Enter motion idle sleep time (in sec)</string>
+    <string name="pref_idle_sleep_default" translatable="false">3</string>
+
+    <string name="pref_active_sleep_key">idle_active_time_key</string>
+    <string name="pref_active_sleep_title">Motion active sleep time</string>
+    <string name="pref_active_sleep_dlg">Enter motion active sleep time (in sec)</string>
+    <string name="pref_active_sleep_default" translatable="false">0.5</string>
+
+    <!-- Cat Alarm strings -->
+    <string name="pref_catalarm_settings_key">cat_alarm_settings_key</string>
+    <string name="pref_catalarm_settings_title">Cat Alarm Settings</string>
+
+    <string name="pref_alarm_key">alarm_key</string>
+    <string name="pref_alarm_title">Alarm</string>
+    <string name="pref_alarm_dlg">Choose the alarm played when cat detected</string>
+    <string name="pref_alarm_default" translatable="false">airhorn</string>
+
+    <string name="pref_different_events_key">different_events_key</string>
+    <string name="pref_different_events_title">Maximum time per event</string>
+    <string name="pref_different_events_dlg">Maximum time considered as a cat detection event for statistics (in sec)</string>
+    <string name="pref_different_events_default" translatable="false">30</string>
+
+    <string name="pref_stats_key">stats_key</string>
+    <string name="pref_stats_title">Statistics</string>
+    <string name="pref_stats_dlg">Choose which statistcs would you like to see</string>
+
+    <!-- WebRTC strings -->
+    <string name="pref_resolution_key">resolution_preference</string>
+    <string name="pref_resolution_title">Video resolution.</string>
+    <string name="pref_resolution_dlg">Enter AppRTC local video resolution.</string>
+    <string name="pref_resolution_default">Default</string>
+
+    <string name="pref_fps_key">fps_preference</string>
+    <string name="pref_fps_title">Camera fps.</string>
+    <string name="pref_fps_dlg">Enter local camera fps.</string>
+    <string name="pref_fps_default">Default</string>
+
+    <string name="pref_videocodec_key">videocodec_preference</string>
+    <string name="pref_videocodec_title">Default video codec.</string>
+    <string name="pref_videocodec_dlg">Select default video codec.</string>
+    <string name="pref_videocodec_default">VP8</string>
+
+    <string name="pref_hwcodec_key">hwcodec_preference</string>
+    <string name="pref_hwcodec_title">Video codec hardware acceleration.</string>
+    <string name="pref_hwcodec_dlg">Use hardware accelerated video codec (if available).</string>
+    <string name="pref_hwcodec_default">true</string>
+
+    <string name="pref_startaudiobitrate_key">startaudiobitrate_preference</string>
+    <string name="pref_startaudiobitrate_title">Audio bitrate setting.</string>
+    <string name="pref_startaudiobitrate_dlg">Audio bitrate setting.</string>
+    <string name="pref_startaudiobitrate_default">Default</string>
+
+    <string name="pref_startaudiobitratevalue_key">startaudiobitratevalue_preference</string>
+    <string name="pref_startaudiobitratevalue_title">Audio codec bitrate.</string>
+    <string name="pref_startaudiobitratevalue_dlg">Enter audio codec bitrate in kbps.</string>
+    <string name="pref_startaudiobitratevalue_default">32</string>
+
+    <string name="pref_audiocodec_key">audiocodec_preference</string>
+    <string name="pref_audiocodec_title">Default audio codec.</string>
+    <string name="pref_audiocodec_dlg">Select default audio codec.</string>
+    <string name="pref_audiocodec_default">OPUS</string>
+
+    <string name="pref_aecdump_key">aecdump_preference</string>
+    <string name="pref_aecdump_title">Create aecdump.</string>
+    <string name="pref_aecdump_dlg">Enable diagnostic audio recordings.</string>
+    <string name="pref_aecdump_default">false</string>
+
+    <string name="pref_opensles_key">opensles_preference</string>
+    <string name="pref_opensles_title">Use OpenSL ES for audio playback.</string>
+    <string name="pref_opensles_dlg">Use OpenSL ES for audio playback.</string>
+    <string name="pref_opensles_default">false</string>
+
+    <string name="pref_disable_built_in_aec_key">disable_built_in_aec_preference</string>
+    <string name="pref_disable_built_in_aec_title">Disable hardware AEC.</string>
+    <string name="pref_disable_built_in_aec_dlg">Disable hardware AEC.</string>
+    <string name="pref_disable_built_in_aec_default">false</string>
+    <string name="pref_built_in_aec_not_available">Hardware AEC is not available</string>
+
+    <string name="pref_disable_built_in_agc_key">disable_built_in_agc_preference</string>
+    <string name="pref_disable_built_in_agc_title">Disable hardware AGC.</string>
+    <string name="pref_disable_built_in_agc_dlg">Disable hardware AGC.</string>
+    <string name="pref_disable_built_in_agc_default">false</string>
+    <string name="pref_built_in_agc_not_available">Hardware AGC is not available</string>
+
+    <string name="pref_disable_built_in_ns_key">disable_built_in_ns_preference</string>
+    <string name="pref_disable_built_in_ns_title">Disable hardware NS.</string>
+    <string name="pref_disable_built_in_ns_dlg">Disable hardware NS.</string>
+    <string name="pref_disable_built_in_ns_default">false</string>
+    <string name="pref_built_in_ns_not_available">Hardware NS is not available</string>
+
+    <string name="pref_enable_level_control_key">enable_level_control_preference</string>
+    <string name="pref_enable_level_control_title">Enable level control.</string>
+    <string name="pref_enable_level_control_default">true</string>
+
+    <string name="pref_disable_webrtc_agc_and_hpf_key">disable_webrtc_agc_and_hpf_preference</string>
+    <string name="pref_disable_webrtc_agc_and_hpf_title">Disable WebRTC AGC and HPF.</string>
+    <string name="pref_disable_webrtc_agc_default">false</string>
+
+</resources>
