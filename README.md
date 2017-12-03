@@ -27,7 +27,7 @@ on Bluemix - an account with the following services:
 - Push notifications
 - Watson Visual Recognition
 
-on Android Studio, the dependecies are stated in app/build.gradle
+on Android Studio, the dependecies are declared in app/build.gradle
 
 # Replacing placeholders
 1. on Raspberry Pi/NodeRED/client-no-cred.txt you should use your credentials from Bluemix IoT Platform on the ibmin/ibmout nodes.
