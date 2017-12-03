@@ -20,7 +20,7 @@ on the raspberry pi:
 - picamera
 - node-red (see https://nodered.org/)
 - uv4l (see https://www.linux-projects.org/uv4l/)
-- python 2 with: setproctitle, psutil, playsound
+- python 2 with: setproctitle, psutil and playsound libraries
 
 on Bluemix - an account with the following services:
 - Internet of Things Platform Starter boilerplate (IoT Platform + Node.js sdk + Cloudant NoSQL)
