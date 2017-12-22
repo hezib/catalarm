@@ -13,7 +13,7 @@ UV4L also runs in the background and waits for WebRTC calls from the android app
 Receives through NodeRED the pictures sent by raspberry pi and inspects them. uses Watson Visual Recognition to identify cats. when a cat is identified, the raspberry pi is notified, a push notification is sent to the android app and the picture is saved to cloudant database.
 
 # Android App
-Displays statstics regarding your cat activity on the countertop, initiates a WebRTC call to raspberry pi, makes queries to cloudant database and much more. built on top of Google's AppRTC.
+Displays statstics regarding your cat activity on the countertop, initiates WebRTC calls to the raspberry pi, makes queries to cloudant database and much more. built on top of Google's AppRTC.
 
 # Prerequisites
 on the raspberry pi:
